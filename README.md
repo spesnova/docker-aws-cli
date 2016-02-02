@@ -15,8 +15,8 @@ To use `aws` command with security crendentails, prepare credentials file first.
 
 ```
 [default]
-aws_access_key_id=AKIAIOSFODNN7EXAMPLE
-aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+aws_access_key_id=XXXXXXXXXXXXXXXXXXXX
+aws_secret_access_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 **`~/.aws/config`**
@@ -34,6 +34,18 @@ Don't forget to add volume option for mount your host `.aws` directory into cont
 $ docker run \
     --rm \
     -v /home/<USER>/.aws:/root/.aws:ro \
+    quay.io/spesnova/aws-cli:latest \
+    aws ec2 describe-instances
+```
+
+### Using Environment Variables
+
+```
+$ docker run \
+    --rm \
+    -e AWS_ACCESS_KEY_ID=XXXXXXXXXXXXXXXXXXXX \
+    -e AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \
+    -e AWS_DEFAULT_REGION=us-east-1 \
     quay.io/spesnova/aws-cli:latest \
     aws ec2 describe-instances
 ```
