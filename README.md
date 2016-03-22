@@ -3,9 +3,12 @@
 
 ## SUPPORTED TAGS
 
-* `latest`, `1.9.2`
+* `latest`, `1.10.14`
+ * aws-cli 1.10.14
  * python 2.7.10
+* `1.9.2`
  * aws-cli 1.9.2
+ * python 2.7.10
 
 ## HOW TO USE
 ### Using AWS Credentials
